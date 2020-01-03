@@ -2,7 +2,7 @@
 
 namespace Iugu;
 
-class Iugu_PaymentToken extends APIResource
+class PaymentToken extends APIResource
 {
     public static function create($attributes = [])
     {

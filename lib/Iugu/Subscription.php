@@ -2,7 +2,7 @@
 
 namespace Iugu;
 
-class Iugu_Subscription extends APIResource
+class Subscription extends APIResource
 {
     public static function create($attributes = [])
     {
@@ -180,6 +180,6 @@ class Iugu_Subscription extends APIResource
             return false;
         }
 
-        return Iugu_Customer::fetch($this->customer_id);
+        return Customer::fetch($this->customer_id);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Iugu;
 
-class Iugu_Factory
+class Factory
 {
     public static function createFromResponse($object_type, $response)
     {
@@ -21,7 +21,7 @@ class Iugu_Factory
                 array_push($results, self::createFromResponse($object_type, $item));
             }
 
-            return new Iugu_SearchResult($results, $response->totalItems);
+            return new SearchResult($results, $response->totalItems);
         } elseif (is_array($response)) {
             $results = [];
 
@@ -29,7 +29,7 @@ class Iugu_Factory
                 array_push($results, self::createFromResponse($object_type, $item));
             }
 
-            return new Iugu_SearchResult($results, count($results));
+            return new SearchResult($results, count($results));
         } elseif (is_object($response)) {
             return new $class_name((array) $response);
         }

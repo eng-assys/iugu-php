@@ -2,7 +2,7 @@
 
 namespace Iugu;
 
-class Iugu_Utilities
+class Utilities
 {
     public static function authFromEnv()
     {

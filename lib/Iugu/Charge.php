@@ -2,7 +2,7 @@
 
 namespace Iugu;
 
-class Iugu_Charge extends APIResource
+class Charge extends APIResource
 {
     public static function create($attributes = [])
     {
@@ -23,6 +23,6 @@ class Iugu_Charge extends APIResource
             return false;
         }
 
-        return Iugu_Invoice::fetch($this->invoice_id);
+        return Invoice::fetch($this->invoice_id);
     }
 }

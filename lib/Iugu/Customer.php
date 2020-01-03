@@ -2,7 +2,7 @@
 
 namespace Iugu;
 
-class Iugu_Customer extends APIResource
+class Customer extends APIResource
 {
     public static function create($attributes = [])
     {
@@ -36,12 +36,12 @@ class Iugu_Customer extends APIResource
 
     public function payment_methods()
     {
-        return new APIChildResource(['customer_id' => $this->id], 'Iugu_PaymentMethod');
+        return new APIChildResource(['customer_id' => $this->id], 'PaymentMethod');
     }
 
     public function invoices()
     {
-        return new APIChildResource(['customer_id' => $this->id], 'Iugu_Invoice');
+        return new APIChildResource(['customer_id' => $this->id], 'Invoice');
     }
 
   // TODO: (WAITING BUGFIX) get DefaultPaymentMethod and return
@@ -57,7 +57,7 @@ class Iugu_Customer extends APIResource
           return false;
       }
 
-      return Iugu_PaymentMethod::fetch(
+      return PaymentMethod::fetch(
       [
         'customer_id' => $this->id,
         'id'          => $this->default_payment_method_id,

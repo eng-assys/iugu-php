@@ -2,7 +2,10 @@
 
 namespace Iugu;
 
-class APIResource extends Iugu_Object
+use Iugu\Exceptions\IuguException;
+use Iugu\Exceptions\IuguObjectNotFound;
+
+class APIResource extends IuguObject
 {
 
     private static $_apiRequester = null;
@@ -36,7 +39,7 @@ class APIResource extends Iugu_Object
     public static function API()
     {
         if (self::$_apiRequester == null) {
-            self::$_apiRequester = new Iugu_APIRequest();
+            self::$_apiRequester = new APIRequest();
         }
 
         return self::$_apiRequester;
@@ -70,7 +73,7 @@ class APIResource extends Iugu_Object
 
     protected static function createFromResponse($response)
     {
-        return Iugu_Factory::createFromResponse(
+        return Factory::createFromResponse(
             self::convertClassToObjectType(), $response
         );
     }

@@ -2,7 +2,7 @@
 
 namespace Iugu;
 
-class Iugu_Plan extends APIResource
+class Plan extends APIResource
 {
     public static function create($attributes = [])
     {

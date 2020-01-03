@@ -2,7 +2,7 @@
 
 namespace Iugu;
 
-class Iugu_SearchResult
+class SearchResult
 {
     protected $_totalResults;
     protected $_results;

@@ -2,7 +2,9 @@
 
 namespace Iugu;
 
-class Iugu_Invoice extends APIResource
+use Iugu\Exceptions\IuguRequestException;
+
+class Invoice extends APIResource
 {
     public static function create($attributes = [])
     {
@@ -43,7 +45,7 @@ class Iugu_Invoice extends APIResource
             return false;
         }
 
-        return Iugu_Customer::fetch($this->customer_id);
+        return Customer::fetch($this->customer_id);
     }
 
     public function cancel()
