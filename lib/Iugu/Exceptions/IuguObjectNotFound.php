@@ -1,6 +1,6 @@
 <?php
 
-namespace Iugu;
+namespace Iugu\Exceptions;
 
 class IuguObjectNotFound extends \Exception
 {
