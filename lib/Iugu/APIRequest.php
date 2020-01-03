@@ -1,5 +1,7 @@
 <?php
 
+namespace Iugu;
+
 class Iugu_APIRequest
 {
     public function __construct()

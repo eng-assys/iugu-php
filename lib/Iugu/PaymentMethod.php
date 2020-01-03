@@ -1,5 +1,7 @@
 <?php
 
+namespace Iugu;
+
 class Iugu_PaymentMethod extends APIResource
 {
     public static function url($object = null)

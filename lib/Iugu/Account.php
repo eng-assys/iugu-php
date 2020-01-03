@@ -1,5 +1,7 @@
 <?php
 
+namespace Iugu;
+
 class Iugu_Account extends APIResource
 {
     public static function create($attributes = [])

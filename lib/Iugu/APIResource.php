@@ -1,5 +1,7 @@
 <?php
 
+namespace Iugu;
+
 class APIResource extends Iugu_Object
 {
 
@@ -101,7 +103,7 @@ class APIResource extends Iugu_Object
             if (isset($response->errors)) {
                 throw new IuguException();
             }
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             return false;
         }
 
@@ -116,7 +118,7 @@ class APIResource extends Iugu_Object
             );
 
             return self::createFromResponse($response);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
 
         }
 
@@ -154,7 +156,7 @@ class APIResource extends Iugu_Object
             $new_object = self::createFromResponse($response);
             $this->copy($new_object);
             $this->resetStates();
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             return false;
         }
 
@@ -175,7 +177,7 @@ class APIResource extends Iugu_Object
             if (isset($response->errors)) {
                 throw new IuguException();
             }
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             return false;
         }
 

@@ -1,5 +1,7 @@
 <?php
 
+namespace Iugu;
+
 class Iugu_Factory
 {
     public static function createFromResponse($object_type, $response)

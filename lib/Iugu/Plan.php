@@ -1,5 +1,7 @@
 <?php
 
+namespace Iugu;
+
 class Iugu_Plan extends APIResource
 {
     public static function create($attributes = [])
@@ -44,7 +46,7 @@ class Iugu_Plan extends APIResource
             $new_object = self::createFromResponse( $response );
             return $new_object;
 
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             return false;
         }
         return false;

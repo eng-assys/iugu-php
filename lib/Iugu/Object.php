@@ -1,10 +1,12 @@
 <?php
 
+namespace Iugu;
+
 //ooooooooooooooooooooooooooooooooooooooooooooo
 // Iugu_Object manages the Object State
 // Values that changed, values that need to be saved
 //ooooooooooooooooooooooooooooooooooooooooooooo
-class Iugu_Object implements ArrayAccess
+class Iugu_Object implements \ArrayAccess
 {
     protected $_attributes;
     protected $_unsavedAttributes;
