@@ -25,8 +25,10 @@
         "php-vcr/php-vcr": "^1.4"
     },
     "autoload": {
-        "classmap": ["lib/Iugu/"]
-    },
+      "psr-4": {
+          "Iugu\\": "lib/Iugu/"
+      }
+  },
     "scripts": {
         "tests": "./vendor/bin/phpunit --colors tests"
     }
