@@ -8,7 +8,8 @@ class Factory
     {
         // Should i send fetch to here?
     $object_type = str_replace(' ', '', ucwords(str_replace('_', ' ', $object_type)));
-        $class_name = 'Iugu_'.$object_type;
+        // $class_name = 'Iugu_'.$object_type;
+        $class_name = $object_type;
 
         if (!class_exists($class_name)) {
             return;
