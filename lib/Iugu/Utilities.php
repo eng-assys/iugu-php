@@ -1,6 +1,8 @@
 <?php
 
-class Iugu_Utilities
+namespace Iugu;
+
+class Utilities
 {
     public static function authFromEnv()
     {

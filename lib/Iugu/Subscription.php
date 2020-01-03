@@ -1,6 +1,8 @@
 <?php
 
-class Iugu_Subscription extends APIResource
+namespace Iugu;
+
+class Subscription extends APIResource
 {
     public static function create($attributes = [])
     {
@@ -52,7 +54,7 @@ class Iugu_Subscription extends APIResource
             $this->resetStates();
 
             return $new_object;
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             return false;
         }
 
@@ -79,7 +81,7 @@ class Iugu_Subscription extends APIResource
             $this->resetStates();
 
             return $new_object;
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             return false;
         }
 
@@ -109,7 +111,7 @@ class Iugu_Subscription extends APIResource
             $this->resetStates();
 
             return $old_flag != $new_flag;
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             return false;
         }
 
@@ -138,7 +140,7 @@ class Iugu_Subscription extends APIResource
             $this->resetStates();
 
             return $old_flag != $new_flag;
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             return false;
         }
 
@@ -162,7 +164,7 @@ class Iugu_Subscription extends APIResource
             if (isset($response->errors)) {
                 return false;
             }
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             return false;
         }
 
@@ -178,6 +180,6 @@ class Iugu_Subscription extends APIResource
             return false;
         }
 
-        return Iugu_Customer::fetch($this->customer_id);
+        return Customer::fetch($this->customer_id);
     }
 }

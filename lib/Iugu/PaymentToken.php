@@ -1,6 +1,8 @@
 <?php
 
-class Iugu_PaymentToken extends APIResource
+namespace Iugu;
+
+class PaymentToken extends APIResource
 {
     public static function create($attributes = [])
     {

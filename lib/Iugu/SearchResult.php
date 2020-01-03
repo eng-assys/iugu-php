@@ -1,6 +1,8 @@
 <?php
 
-class Iugu_SearchResult
+namespace Iugu;
+
+class SearchResult
 {
     protected $_totalResults;
     protected $_results;

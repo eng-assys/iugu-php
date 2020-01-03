@@ -1,6 +1,8 @@
 <?php
 
-class Iugu_BankVerification extends APIResource
+namespace Iugu;
+
+class BankVerification extends APIResource
 {
     public static function create($attributes = [])
     {

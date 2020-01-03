@@ -1,6 +1,11 @@
 <?php
 
-class Iugu_APIRequest
+namespace Iugu;
+
+use Iugu\Exceptions\IuguAuthenticationException;
+use Iugu\Exceptions\IuguObjectNotFound;
+
+class APIRequest
 {
     public function __construct()
     {
@@ -22,7 +27,7 @@ class Iugu_APIRequest
         global $iugu_last_api_response_code;
 
         if (Iugu::getApiKey() == null) {
-            Iugu_Utilities::authFromEnv();
+            Utilities::authFromEnv();
         }
 
         if (Iugu::getApiKey() == null) {
@@ -82,13 +87,13 @@ class Iugu_APIRequest
         switch ($method) {
         case 'get':
         case 'delete':
-            $paramsInURL = Iugu_Utilities::arrayToParams($data);
+            $paramsInURL = Utilities::arrayToParams($data);
             $data = null;
             $url = (strpos($url, '?')) ? $url.'&'.$paramsInURL : $url.'?'.$paramsInURL;
             break;
         case 'post':
         case 'put':
-            $data = Iugu_Utilities::arrayToParams($data);
+            $data = Utilities::arrayToParams($data);
             break;
         }
 

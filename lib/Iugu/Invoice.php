@@ -1,6 +1,10 @@
 <?php
 
-class Iugu_Invoice extends APIResource
+namespace Iugu;
+
+use Iugu\Exceptions\IuguRequestException;
+
+class Invoice extends APIResource
 {
     public static function create($attributes = [])
     {
@@ -41,7 +45,7 @@ class Iugu_Invoice extends APIResource
             return false;
         }
 
-        return Iugu_Customer::fetch($this->customer_id);
+        return Customer::fetch($this->customer_id);
     }
 
     public function cancel()
@@ -61,7 +65,7 @@ class Iugu_Invoice extends APIResource
             $new_object = self::createFromResponse($response);
             $this->copy($new_object);
             $this->resetStates();
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             return false;
         }
 
@@ -85,7 +89,7 @@ class Iugu_Invoice extends APIResource
             $new_object = self::createFromResponse($response);
             $this->copy($new_object);
             $this->resetStates();
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             return false;
         }
 
@@ -106,7 +110,7 @@ class Iugu_Invoice extends APIResource
 				throw new IuguRequestException( $response->errors );
 			}
 			return self::createFromResponse($response);
-		} catch (Exception $e) {
+		} catch (\Exception $e) {
 			return false;
 		}
 
@@ -131,7 +135,7 @@ class Iugu_Invoice extends APIResource
             $new_object = self::createFromResponse($response);
             $this->copy($new_object);
             $this->resetStates();
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             return false;
         }
 

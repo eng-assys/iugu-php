@@ -1,6 +1,11 @@
 <?php
 
-class APIResource extends Iugu_Object
+namespace Iugu;
+
+use Iugu\Exceptions\IuguException;
+use Iugu\Exceptions\IuguObjectNotFound;
+
+class APIResource extends IuguObject
 {
 
     private static $_apiRequester = null;
@@ -34,7 +39,7 @@ class APIResource extends Iugu_Object
     public static function API()
     {
         if (self::$_apiRequester == null) {
-            self::$_apiRequester = new Iugu_APIRequest();
+            self::$_apiRequester = new APIRequest();
         }
 
         return self::$_apiRequester;
@@ -68,7 +73,7 @@ class APIResource extends Iugu_Object
 
     protected static function createFromResponse($response)
     {
-        return Iugu_Factory::createFromResponse(
+        return Factory::createFromResponse(
             self::convertClassToObjectType(), $response
         );
     }
@@ -101,7 +106,7 @@ class APIResource extends Iugu_Object
             if (isset($response->errors)) {
                 throw new IuguException();
             }
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             return false;
         }
 
@@ -116,7 +121,7 @@ class APIResource extends Iugu_Object
             );
 
             return self::createFromResponse($response);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
 
         }
 
@@ -154,7 +159,7 @@ class APIResource extends Iugu_Object
             $new_object = self::createFromResponse($response);
             $this->copy($new_object);
             $this->resetStates();
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             return false;
         }
 
@@ -175,7 +180,7 @@ class APIResource extends Iugu_Object
             if (isset($response->errors)) {
                 throw new IuguException();
             }
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             return false;
         }
 

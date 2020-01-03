@@ -1,6 +1,10 @@
 <?php
 
-class Iugu_PaymentMethod extends APIResource
+namespace Iugu;
+
+use Iugu\Exceptions\IuguException;
+
+class PaymentMethod extends APIResource
 {
     public static function url($object = null)
     {

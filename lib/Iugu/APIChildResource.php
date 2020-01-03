@@ -1,5 +1,7 @@
 <?php
 
+namespace Iugu;
+
 class APIChildResource
 {
     private $_parentKeys;

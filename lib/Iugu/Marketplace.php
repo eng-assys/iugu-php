@@ -1,6 +1,8 @@
 <?php
 
-class Iugu_Marketplace extends APIResource
+namespace Iugu;
+
+class Marketplace extends APIResource
 {
     public static function create($attributes = [])
     {

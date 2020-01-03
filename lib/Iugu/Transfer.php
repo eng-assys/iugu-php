@@ -1,6 +1,8 @@
 <?php
 
-class Iugu_Transfer extends APIResource
+namespace Iugu;
+
+class Transfer extends APIResource
 {
     public static function create($attributes = [])
     {
