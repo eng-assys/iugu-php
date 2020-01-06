@@ -12,7 +12,7 @@ class APIResource extends IuguObject
 
   public static function convertClassToObjectType()
   {
-    $object_type = str_replace('Iugu_', '', get_called_class());
+    $object_type = str_replace('Iugu\\', '', get_called_class());
     $object_type = strtolower(preg_replace('/(?<=\\w)([A-Z])/', '_\\1', $object_type));
 
     return mb_strtolower($object_type, 'UTF-8');
