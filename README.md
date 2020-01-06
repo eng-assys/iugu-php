@@ -2,6 +2,9 @@
 
 [![Build status](https://img.shields.io/travis/iugu/iugu-php.svg)](https://travis-ci.org/iugu/iugu-php)
 
+## Aviso
+Devido às modificações na estrutura do código, os testes não estão funcionando e os exemplos estão desatualizados (essa situação será consertada em uma release futura).
+
 ## Requisitos
 
 * PHP 5.4+
