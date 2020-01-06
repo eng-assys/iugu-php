@@ -1,6 +1,6 @@
 <?php
 
-namespace Iugu;
+namespace IuguSdk;
 
 class APIChildResource
 {

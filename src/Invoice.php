@@ -1,8 +1,8 @@
 <?php
 
-namespace Iugu;
+namespace IuguSdk;
 
-use Iugu\Exceptions\IuguRequestException;
+use IuguSdk\Exceptions\IuguRequestException;
 
 class Invoice extends APIResource
 {

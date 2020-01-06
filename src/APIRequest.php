@@ -1,9 +1,9 @@
 <?php
 
-namespace Iugu;
+namespace IuguSdk;
 
-use Iugu\Exceptions\IuguAuthenticationException;
-use Iugu\Exceptions\IuguObjectNotFound;
+use IuguSdk\Exceptions\IuguAuthenticationException;
+use IuguSdk\Exceptions\IuguObjectNotFound;
 
 class APIRequest
 {

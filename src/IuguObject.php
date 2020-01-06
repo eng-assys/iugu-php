@@ -1,6 +1,6 @@
 <?php
 
-namespace Iugu;
+namespace IuguSdk;
 
 //ooooooooooooooooooooooooooooooooooooooooooooo
 // IuguObject manages the Object State

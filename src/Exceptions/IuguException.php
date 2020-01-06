@@ -1,6 +1,6 @@
 <?php
 
-namespace Iugu\Exceptions;
+namespace IuguSdk\Exceptions;
 
 class IuguException extends \Exception
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Iugu;
+namespace IuguSdk;
 
 class Factory
 {
@@ -8,7 +8,7 @@ class Factory
   {
     // Should i send fetch to here?
     $object_type = str_replace(' ', '', ucwords(str_replace('_', ' ', $object_type)));
-    $class_name = 'Iugu\\' . $object_type;
+    $class_name = 'IuguSdk\\' . $object_type;
 
     if (!class_exists($class_name)) {
       return;

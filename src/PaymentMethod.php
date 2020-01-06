@@ -1,8 +1,8 @@
 <?php
 
-namespace Iugu;
+namespace IuguSdk;
 
-use Iugu\Exceptions\IuguException;
+use IuguSdk\Exceptions\IuguException;
 
 class PaymentMethod extends APIResource
 {
