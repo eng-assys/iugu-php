@@ -147,6 +147,29 @@ class Subscription extends APIResource
     return false;
   }
 
+  public function change_plan_simulation($identifier = null)
+  {
+    if ($this->is_new()) {
+      return false;
+    }
+    if ($identifier == null) {
+      return false;
+    }
+
+    try {
+      return self::createFromResponse(
+        self::API()->request(
+          'GET',
+          static::url($this) . '/change_plan_simulation/' . $identifier
+        )
+      );
+    } catch (\Exception $e) {
+      return false;
+    }
+
+    return true;
+  }
+
   public function change_plan($identifier = null)
   {
     if ($this->is_new()) {
