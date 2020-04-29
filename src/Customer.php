@@ -36,7 +36,7 @@ class Customer extends APIResource
 
   public function payment_methods()
   {
-    return new APIChildResource(['customer_id' => $this->id], 'PaymentMethod');
+    return PaymentMethod::fetch(['customer_id' => $this->id]);
   }
 
   public function invoices()
